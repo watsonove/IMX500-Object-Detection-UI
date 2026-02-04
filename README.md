@@ -1,30 +1,37 @@
 # IMX500-Object-Detection-UI
-Eine interaktive, didaktische Anwendung für den Raspberry Pi 4/5 mit der Sony IMX500 AI Camera. Diese Software visualisiert Schritt für Schritt wie Objketerkennung funktioniert. Von der Rohdatenerfassung bis zum fertigen Ergebnis.
+Eine interaktive, didaktische Anwendung für den Raspberry Pi 4/5 mit der Sony IMX500 AI Camera. Diese Software visualisiert Schritt für Schritt wie Objekterkennung funktioniert. Von der Rohdatenerfassung bis zum fertigen Ergebnis.
 
 Die Anwendung bietet zwei Lernniveaus ("Schüler" und "Student") und ist für den Einsatz auf Messen, in Schulen oder Universitäten konzipiert.  
 
 ## 🚀 Features  
 
-* **Live-Objektdetektion:** Nutzt den Hardware-Beschleuniger des IMX500 Sensors.
+1. **Live-Objektdetektion:** Nutzt den Hardware-Beschleuniger des IMX500 Sensors.
 
-* **Zwei Lern-Niveaus:**
-    * **Schüler:** 4 vereinfachte Schritte, spielerischer Zugang.
-    * **Student:** 7 detaillierte Schritte mit technischer Tiefe (Pre-Processing, Tensoren, NMS).
+2. **Zwei Lern-Niveaus:**
+  
+* **Schüler:** 4 vereinfachte Schritte, spielerischer Zugang.
+    
+* **Student:** 7 detaillierte Schritte mit technischer Tiefe (Pre-Processing, Tensoren, NMS).
 
-* **Interaktiver Workflow:**
-    * *Live-Modus:* Echtzeit-Erkennung.
-    * *Analyse-Modus:* Einfrieren eines Bildes und schrittweise Durchleuchtung der KI-Pipeline.
+3. **Interaktiver Workflow:**
+  
+* *Live-Modus:* Echtzeit-Erkennung.
+    
+* *Analyse-Modus:* Einfrieren eines Bildes und schrittweise Durchleuchtung der KI-Pipeline.
 
-* **Pixel-Inspektor:** In Schritt 1 können einzelne Pixel mit der Maus untersucht werden (RGB-Werte), um das Konzept der "Matrix" zu verdeutlichen.
+4. **Pixel-Inspektor:** In Schritt 1 können einzelne Pixel mit der Maus untersucht werden (RGB-Werte), um das Konzept der "Matrix" zu verdeutlichen.
 
-* **Gate-Animationen:** Zwischen den Analyseschritten werden animierte Erklärungen (Bildsequenzen) abgespielt.
+5. **Gate-Animationen:** Zwischen den Analyseschritten werden animierte Erklärungen (Bildsequenzen) abgespielt.
 
-* **Bilingual & Audio:** Vollständig in Deutsch und Englisch verfügbar, inklusive Sprachausgabe für Erklärtexte.
+6. **Bilingual & Audio:** Vollständig in Deutsch und Englisch verfügbar, inklusive Sprachausgabe für Erklärtexte.
 
-* **Didaktische Visualisierung:**
-    * Simulation von Auflösungsreduzierung (Pixelation).
-    * Visualisierung von Feature-Maps (Sobel-Filter).
-    * Darstellung von Bounding Boxes und Confidence Scores.
+7. **Didaktische Visualisierung:**
+   
+* Simulation von Auflösungsreduzierung (Pixelation).
+
+* Visualisierung von Feature-Maps (Sobel-Filter).
+  
+* Darstellung von Bounding Boxes und Confidence Scores.
 
 ## 🛠 Hardware-Voraussetzungen 
 
@@ -34,7 +41,7 @@ Die Anwendung bietet zwei Lernniveaus ("Schüler" und "Student") und ist für de
 
 * **Kamera:** Raspberry Pi AI Camera (Sony IMX500).
 
-* **Display:** Touchscreen oder Monitor + Maus/Tastatur.
+* **Display:** Monitor + Maus/Tastatur.
 
 * **Audio:** Lautsprecher oder Kopfhörer (für die Sprachausgabe).
 
@@ -43,31 +50,42 @@ Die Anwendung bietet zwei Lernniveaus ("Schüler" und "Student") und ist für de
 1.  **Repository klonen / Dateien kopieren:**
 
 ```bash
- git clone https://github.com/watsonove/IMX500-Object-Detection-UI/
+git clone https://github.com/watsonove/IMX500-Object-Detection-UI/
 ```
 
-    Stelle sicher, dass alle Projektdateien (`app.py`, `detector.py`, `steps.py`, Ordner `ui/` und `assets/`) vorhanden sind. 
+Stelle sicher, dass alle Projektdateien (`app.py`, `detector.py`, `steps.py`, Ordner `ui/` und `assets/`) vorhanden sind. 
 
 2.  **Abhängigkeiten installieren:**
 
-    Das System benötigt Python 3, `picamera2` (vorinstalliert auf Bookworm) und `pygame`, sowie die IMX500 firmware `imx500`.  
+Alle Befehle werden im Terminal ausgeführt.
+    
+Das System benötigt Python 3, `picamera2` (vorinstalliert auf Bookworm) und `pygame`, sowie die IMX500 firmware `imx500`.
+    
+Zuerst sicher gehen, dass der Raspberry PI die aktuelle Software hat:
 
-    ```bash
+```bash
+sudo apt update && sudo apt full-upgrade  
+```
 
-    sudo apt update
-    sudo apt full-upgrade
-    
-    sudo apt install imx500-all
+Dann die Abhängigkeiten installieren:
 
-    sudo apt install python3-libcamera python3-kms++ python3-pygame
+```bash
+sudo apt install python3-libcamera python3-kms++ python3-pygame
+```
 
-    # Falls numpy fehlt:
+Sowie
 
-    sudo apt install python3-numpy
+```bash
+sudo apt install imx500-all
+```
+  
+Falls numpy fehlt:
 
-    ```
+```bash
+sudo apt install python3-numpy
+```
 
-  Nachdem du nun die Voraussetzungen installiert hast, starte den Raspberry Pi neu:
+Nachdem du nun die Voraussetzungen installiert hast, starte den Raspberry Pi neu:
   
 ```bash
 sudo reboot
@@ -75,7 +93,7 @@ sudo reboot
  
 3.  **Assets prüfen:**
 
-    Stelle sicher, dass die Ordnerstruktur korrekt ist (siehe unten "Projektstruktur"). Besonders wichtig sind die Bildsequenzen in `assets/schritt_X_experte/`.
+Stelle sicher, dass die Ordnerstruktur korrekt ist (siehe unten "Projektstruktur"). Besonders wichtig sind die Bildsequenzen in `assets/schritt_X_experte/`.
 
 ## ▶️ Starten der Anwendung  
 
@@ -124,19 +142,16 @@ Die Anwendung ist für Tastatur- und Mausbedienung optimiert.
 
 ## 🌍 Sprache & Audio  
 
-* Sprachwechsel: Klicke oben rechts auf den Button DE / EN, um die Sprache der Texte und des Audios zu wechseln.  
+1. Sprachwechsel: Klicke oben rechts auf den Button DE / EN, um die Sprache der Texte und des Audios zu wechseln.  
 
-*Audio-Dateien:
+2. Audio-Dateien:
+  
+* Deutsch: schueler_step_X.mp3
 
-    *Deutsch: schueler_step_X.mp3
+* Englisch: schueler_step_X_english.mp3
 
-    *Englisch: schueler_step_X_english.mp3
-
-    *Die Dateien müssen im Ordner assets/audio/ liegen.
+* Die Dateien müssen im Ordner assets/audio/ liegen.
 
 ## 📝 Lizenz  
 
-Dieses Projekt wurde für Bildungszwecke entwickelt.
-
- ---
- Entwickelt für Raspberry Pi AI Camera.
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
