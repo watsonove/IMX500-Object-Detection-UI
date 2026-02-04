@@ -104,23 +104,23 @@ Die Anwendung ist für Tastatur- und Mausbedienung optimiert.
 ## 📂 Projektstruktur
 
   imx500_gui/
-├── app.py                 # Hauptprogramm (Controller, Event-Loop)
-├── detector.py            # Hardware-Interface (Kamera, IMX500 Post-Processing)
-├── steps.py               # Texte und Bild-Transformationen (Logik)
-├── README.md              # Dokumentation
-├── ui/                    # UI-Modul (View)
-│   ├── __init__.py
-│   ├── renderer.py        # Zeichenfunktionen (Balken, Overlay, Pixel-Grid)
-│   ├── textlayout.py      # Textumbruch und -formatierung
-│   └── theme.py           # Farben und Design-Konstanten
-└── assets/                # Medien-Dateien
-    ├── Kanit-Bold.ttf     # Schriftart
-    ├── landingpagebg.jpg  # Hintergrundbild
-    ├── audio/             # MP3 Sprachdateien (DE & EN)
-    ├── schritt_1_experte/ # Bildsequenz Animation Schritt 1
-    ├── schritt_2_experte/ # Bildsequenz Animation Schritt 2
-    ├── ...                # (weitere Ordner bis schritt_7)
-    └── schritt_7_experte/
+├── app.py                 # Hauptprogramm (Controller, Event-Loop)\
+├── detector.py            # Hardware-Interface (Kamera, IMX500 Post-Processing)\
+├── steps.py               # Texte und Bild-Transformationen (Logik)\
+├── README.md              # Dokumentation\
+├── ui/                    # UI-Modul (View)\
+│   ├── __init__.py\
+│   ├── renderer.py        # Zeichenfunktionen (Balken, Overlay, Pixel-Grid)\
+│   ├── textlayout.py      # Textumbruch und -formatierung\
+│   └── theme.py           # Farben und Design-Konstanten\
+└── assets/                # Medien-Dateien\
+    ├── Kanit-Bold.ttf     # Schriftart\
+    ├── landingpagebg.jpg  # Hintergrundbild\
+    ├── audio/             # MP3 Sprachdateien (DE & EN)\
+    ├── schritt_1_experte/ # Bildsequenz Animation Schritt 1\
+    ├── schritt_2_experte/ # Bildsequenz Animation Schritt 2\
+    ├── ...                # (weitere Ordner bis schritt_7)\
+    └── schritt_7_experte/\
 
 ## 🌍 Sprache & Audio  
 
