@@ -9,9 +9,9 @@ Die Anwendung bietet zwei Lernniveaus ("Schüler:innen" und "Student:innen") und
 
 2. **Zwei Lern-Niveaus:**
   
-* **Schüler:** 4 vereinfachte Schritte, spielerischer Zugang.
+* **Schüler:in:** 4 vereinfachte Schritte, spielerischer Zugang.
     
-* **Student:** 7 detaillierte Schritte mit technischer Tiefe (Pre-Processing, Tensoren, NMS).
+* **Student:in:** 7 detaillierte Schritte mit technischer Tiefe (Pre-Processing, Tensoren, NMS).
 
 3. **Interaktiver Workflow:**
   
