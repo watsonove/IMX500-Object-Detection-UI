@@ -78,7 +78,7 @@ Dann die Abhängigkeiten installieren:
 sudo apt install python3-libcamera python3-kms++ python3-pygame
 ```
 
-Sowie
+Sowie die IMX500 firmware:
 
 ```bash
 sudo apt install imx500-all
