@@ -4,7 +4,7 @@
   style="width:500px; float: left;"
 />
 # IMX500-Object-Detection-UI
-Diese Anwendung ist eine interaktive Bildungssoftware für den Raspberry Pi 4/5 und die Sony IMX500 AI Camera. Ihr primäres Ziel ist die didaktische Aufbereitung von Computer Vision.
+Diese Anwendung ist eine interaktive Bildungssoftware für den Raspberry Pi 4/5 und die Sony IMX500 AI Camera. Ihr primäres Ziel ist die didaktische Aufbereitung von Objekterkennung.
 
 Wo Standard-Anwendungen die Objekterkennung oft als Blackbox behandeln, bricht diese Software die komplexen Prozesse auf und visualisiert sie verständlich. Der Nutzer wird Schritt für Schritt durch die Pipeline geführt – beginnend bei der Rohdatenerfassung des IMX500-Sensors bis hin zur grafischen Darstellung der Erkennungsergebnisse. Um unterschiedlichen Wissensständen gerecht zu werden, bietet die UI zwei Modi ("Schüler:innen" und "Student:innen"), was sie zu einem idealen Werkzeug für Lehrende an Schulen, Universitäten sowie für Exponate auf Fachmessen macht. 
 
