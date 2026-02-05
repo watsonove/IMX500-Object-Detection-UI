@@ -1,9 +1,12 @@
-![Logo of the project](https://github.com/watsonove/IMX500-Object-Detection-UI/blob/main/logo.png)
-
+<img 
+  src="https://raw.githubusercontent.com/watsonove/IMX500-Object-Detection-UI/main/logo.png" 
+  alt="logo" 
+  style="width:500px; float: left;"
+/>
 # IMX500-Object-Detection-UI
-Eine interaktive, didaktische Anwendung für den Raspberry Pi 4/5 mit der Sony IMX500 AI Camera. Diese Software visualisiert Schritt für Schritt wie Objekterkennung funktioniert. Von der Rohdatenerfassung bis zum fertigen Ergebnis.
+Diese Anwendung ist eine interaktive Bildungssoftware für den Raspberry Pi 4/5 und die Sony IMX500 AI Camera. Ihr primäres Ziel ist die didaktische Aufbereitung von Computer Vision.
 
-Die Anwendung bietet zwei Lernniveaus ("Schüler:innen" und "Student:innen") und ist für den Einsatz auf Messen, in Schulen oder Universitäten konzipiert.  
+Wo Standard-Anwendungen die Objekterkennung oft als Blackbox behandeln, bricht diese Software die komplexen Prozesse auf und visualisiert sie verständlich. Der Nutzer wird Schritt für Schritt durch die Pipeline geführt – beginnend bei der Rohdatenerfassung des IMX500-Sensors bis hin zur grafischen Darstellung der Erkennungsergebnisse. Um unterschiedlichen Wissensständen gerecht zu werden, bietet die UI zwei Modi ("Schüler:innen" und "Student:innen"), was sie zu einem idealen Werkzeug für Lehrende an Schulen, Universitäten sowie für Exponate auf Fachmessen macht. 
 
 ## 🚀 Features  
 
