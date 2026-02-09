@@ -64,7 +64,7 @@ Stelle sicher, dass alle Projektdateien (`app.py`, `detector.py`, `steps.py`, Or
 
 Alle Befehle werden im Terminal ausgeführt.
     
-Das System benötigt Python 3, `picamera2` (vorinstalliert auf Bookworm) und `pygame`, sowie die IMX500 firmware `imx500`.
+Das System benötigt `Python 3.11`, `picamera2` (vorinstalliert auf Bookworm) und `pygame`, sowie die IMX500 firmware `imx500`.
     
 Zuerst sicher gehen, dass der Raspberry PI die aktuelle Software hat:
 
