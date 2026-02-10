@@ -38,6 +38,13 @@ Wo Standard-Anwendungen die Objekterkennung oft als Blackbox behandeln, bricht d
   
 * Darstellung von Bounding Boxes und Confidence Scores.
 
+## 📹 Walkthrough
+
+Durch Anklicken des Bildes können Sie einen Walkthrough der Anwendung abrufen.
+
+[![Video-Titel](https://img.youtube.com/vi/wMuOgq-UNXw/0.jpg)](https://www.youtube.com/watch?v=wMuOgq-UNXw)
+
+
 ## 🛠 Hardware-Voraussetzungen 
 
 * **Raspberry Pi 4 oder 5**
