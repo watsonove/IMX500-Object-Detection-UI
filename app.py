@@ -45,12 +45,16 @@ class App:
         self.landing_bg_path = "assets/landingpagebg.jpg"
         self.font_path = "assets/Kanit-Bold.ttf"
         self.audio_dir = os.path.join(self.base_dir, "assets", "audio")
+        self.qr_path = os.path.join(self.base_dir, "assets", "qr.png")
 
-        # Background caches
+        # Background & Image caches
         self._landing_bg_original = None
         self._landing_bg_scaled = None
         self._landing_bg_scaled_size = None
+        self._qr_code_img = None
+        
         self._load_landing_bg()
+        self._load_qr_code()
 
         # Application State
         self.running = True
@@ -242,6 +246,13 @@ class App:
         self._landing_bg_scaled = None
         self._landing_bg_scaled_size = None
 
+    def _load_qr_code(self) -> None:
+        try:
+            self._qr_code_img = pygame.image.load(self.qr_path).convert_alpha()
+        except Exception as e:
+            print(f"Warning: QR Code not found at {self.qr_path} ({e})")
+            self._qr_code_img = None
+
     def _get_landing_bg_scaled(self) -> pygame.Surface | None:
         if self._landing_bg_original is None:
             return None
@@ -421,14 +432,58 @@ class App:
         self.renderer.draw_card(self.screen, panel_rect, fill=self.theme.PANEL_2, outline=self.theme.LINE, radius=self.theme.RADIUS)
         header_h = int(60 * self._scale())
         self.renderer.draw_text(self.screen, self.font_header, "Ergebnisse", (panel_rect.x + 20, panel_rect.y + 20), self.theme.TEXT)
+        
+        # 1. Definiere den Bereich für das Diagramm
+        chart_top_y = panel_rect.y + header_h
+        # Wir reservieren ca. 35% der Panel-Höhe für das Diagramm (oder fix 160px skalierbar)
+        chart_height = int(160 * self._scale())
+        
         content_rect = pygame.Rect(
             panel_rect.x + 14, 
-            panel_rect.y + header_h, 
+            chart_top_y, 
             panel_rect.w - 28, 
-            panel_rect.h - header_h - 14
+            chart_height
         )
+        
+        # Zeichne Diagramm
         chart_font = self._load_font(self._fsize(26))
         self.renderer.draw_bar_chart(self.screen, content_rect, self.snapshot.top3, self.args.threshold, chart_font, self.font_ui)
+
+        # Draw QR Code & Bias Info only in Student Step 7
+        if self.level == "STUDENT" and self.step == 7:
+            # Layout Cursor: Wo sind wir jetzt? (Unterhalb des Diagramms)
+            cursor_y = content_rect.bottom + int(30 * self._scale())
+            
+            # 1. Info Text (Bias/Fehler)
+            bias_text = "Hinweis: KI ist nicht objektiv (Bias). Fehler sind möglich!" if self.lang == "DE" else "Note: AI is not objective (Bias). Errors are possible!"
+            txt_surf = self.font_small.render(bias_text, True, self.theme.WARN)
+            txt_rect = txt_surf.get_rect(centerx=panel_rect.centerx, top=cursor_y)
+            self.screen.blit(txt_surf, txt_rect)
+            
+            # Update Cursor (Text-Höhe + Padding)
+            cursor_y = txt_rect.bottom + int(20 * self._scale())
+
+            # 2. QR Code (Nur wenn Platz ist)
+            if self._qr_code_img:
+                available_h = panel_rect.bottom - cursor_y - 20
+                
+                if available_h > 80:
+                    # Maximal verfügbare Breite/Höhe nutzen, aber nicht riesig werden
+                    size = min(content_rect.w - 40, available_h)
+                    size = min(size, int(300 * self._scale())) # Cap size
+                    
+                    # Label above QR
+                    lbl = self.font_small.render("Source Code (GitHub)", True, self.theme.TEXT_MUTED)
+                    lbl_rect = lbl.get_rect(centerx=panel_rect.centerx, top=cursor_y)
+                    self.screen.blit(lbl, lbl_rect)
+                    
+                    cursor_y = lbl_rect.bottom + 5
+                    
+                    # Draw QR Code
+                    scaled_qr = pygame.transform.smoothscale(self._qr_code_img, (int(size), int(size)))
+                    qr_rect = scaled_qr.get_rect(centerx=panel_rect.centerx, top=cursor_y)
+                    
+                    self.screen.blit(scaled_qr, qr_rect)
 
     def _draw_home_button(self) -> None:
         pad = self.pad
