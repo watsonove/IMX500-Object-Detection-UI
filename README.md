@@ -112,6 +112,7 @@ Stelle sicher, dass die Ordnerstruktur korrekt ist (siehe unten "Projektstruktur
 ## ▶️ Starten der Anwendung  
 
 Starte die Anwendung über das Terminal. Du musst den Pfad zu deiner Model-Datei angeben (z. B. ein MobileNet oder EfficientDet Modell, das für den IMX500 kompiliert ist).  
+Hier durch mobilenetv2:
 
 ```bash
 
