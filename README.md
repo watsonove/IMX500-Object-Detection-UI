@@ -128,7 +128,7 @@ Die Anwendung ist für Tastatur- und Mausbedienung optimiert.
 | Taste / Aktion     | Funktion                                                                |
 | :----------------- | :---------------------------------------------------------------------- |
 | **LEERTASTE**      | **Freeze / Unfreeze:** Wechselt zwischen Live-Kamera und Analyse-Modus. |
-| **ENTER**          | **Weiter:** Geht zum nächsten Schritt oder bestätigt das "Gate".        |
+| **ENTER**          | **Weiter:** Geht zum nächsten Schritt oder bestätigt das Gate.        |
 | **BACKSPACE**      | **Zurück:** Geht zum vorherigen Schritt oder zurück zum Gate.           |
 | **Mausklick**      | Bedienung der UI-Buttons (Sprache, Home, Audio, Level-Wahl).            |
 | **Mausbewegung**   | Im "Schritt 1" (Analyse): Zeigt RGB-Werte unter dem Mauszeiger an.      |
