@@ -101,7 +101,6 @@ class Renderer:
             pygame.draw.line(surface, self.t.BG, (x, rect.y), (x, rect.bottom), 2)
             
         # Draw Text Indicator above
-        # Hier wurde das Padding erhöht (rect.y - 12 statt -4)
         label = f"{step} / {total_steps}"
         txt = font_small.render(label, True, self.t.TEXT_MUTED)
         txt_rect = txt.get_rect(centerx=rect.centerx, bottom=rect.y - 12)
@@ -139,7 +138,6 @@ class Renderer:
         pygame.draw.line(surface, self.t.ACCENT, (thr_x, chart_y - 8), (thr_x, chart_y + chart_h + 8), 2)
 
         if not top3:
-            # self.draw_text(surface, body_font, "...", (chart_x, chart_y), self.t.TEXT_MUTED)
             return
 
         for i, (lab, conf) in enumerate(top3[:3]):
@@ -153,6 +151,6 @@ class Renderer:
             bw = int(chart_w * clamp01(conf))
             pygame.draw.rect(surface, bar_col, pygame.Rect(chart_x, y, bw, row_h), border_radius=10)
             
-            # Label Text
-            lbl_surf = body_font.render(f"{lab} {int(conf*100)}%", True, self.t.TEXT)
+            # Label Text - JETZT IN SCHWARZ (0, 0, 0)
+            lbl_surf = body_font.render(f"{lab} {int(conf*100)}%", True, (0, 0, 0))
             surface.blit(lbl_surf, (chart_x + 8, y + (row_h - lbl_surf.get_height()) // 2))
